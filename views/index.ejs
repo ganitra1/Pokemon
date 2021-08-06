@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Pokemon Homepage</h1>
+
+        <nav>
+            <a href="/pokemon/new">Create new Pokemon</a>
+        </nav>
+
+        <% for(let i=0; i<pokemon.length; i++){ %>
+            <a href="/pokemon/<%=i%>"><img src=<%=pokemon[i].img%> /></a>
+            <form action="/pokemon/<%=i%>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete" />
+            </form>
+            <a href="/pokemon/<%=i%>/edit">Edit</a>
+            <br><br>
+        <% } %>
+    </body>
+</html>
