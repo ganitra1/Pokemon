@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Edit Pokemon</h1>
 
-        <h1>Edit Pokemon</h1>
-        <form action="/pokemon/<%=characterIndex%>?_method=PUT" method="POST">
-            Name: <input type="text" name="name" value="<%=character.name%>" />
-            Image: <input type="text" name="img" value="<%=character.img%>" />
-            <input type="submit" value="Edit" />
-        </form>
-    </body>
+    <form action="/pokemon/<%= index %>?_method=put" method="post">
+      Name: <input type="text" name="name" value="<%= pokemon.name %>" /><br />
+      Image: <input type="url" name="img" value="<%= pokemon.img %>" /><br />
+      <input type="submit" value="Create" />
+    </form>
+  </body>
 </html>
