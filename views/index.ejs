@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="/css/app.css">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,15 +11,17 @@
     <h1>Pokemon page</h1>
 
     <ul>
-      <% pokemon.forEach((poke, index) => { %>
+      <% for (let i=0; i<pokemon.length; i++) { %>
       <li>
-        <a href="/pokemon/<%= index %>"><%= poke.name %></a> &mdash;
-        <a href="/pokemon/<%= index %>/edit">edit</a>
-        <form action="/pokemon/<%= index %>?_method=delete" method="post">
+        <a href="/pokemon/<%= pokemon[i].id %>"> <%= pokemon[i].name %> </a>
+<br> 
+        <a href="/pokemon/<%= pokemon[i].id %>/edit">edit</a>
+
+        <form action="/pokemon/<%= pokemon[i].id%>?_method=delete" method="post">
           <input type="submit" value="delete" />
         </form>
       </li>
-      <% }) %>
+      <% } %>
     </ul>
 
     <a href="/pokemon/new">Create a new Pokemon</a>
